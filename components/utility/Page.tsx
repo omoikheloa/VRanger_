@@ -7,8 +7,8 @@ import React, { ReactChildren } from "react";
 function Page({ currentPage, meta: { title, desc }, children }: PageProps) {
   const pageTitle = `${
     currentPage === "Home"
-      ? "Brayden Wright - Web Developer, Designer, Creator."
-      : `${currentPage} - BraydenTW.io`
+      ? "Omo Ikheloa - Web Developer, Designer, Creator."
+      : `${currentPage} - github.com/omoikheloa`
   }`;
   console.log(currentPage);
   return (
@@ -41,26 +41,26 @@ function Page({ currentPage, meta: { title, desc }, children }: PageProps) {
         <meta name="description" content={desc} />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://braydentw.io/" />
+        <meta property="og:url" content="" />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={desc} />
         <meta
           property="og:image"
-          content="https://braydentw.io/static/misc/og.png"
+          content="https://omovranger.io/static/misc/og.png"
         />
 
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://braydentw.io/" />
+        <meta property="twitter:url" content="https://omovranger.io/" />
         <meta property="twitter:title" content={pageTitle} />
         <meta property="twitter:description" content={desc} />
         <meta
           property="twitter:image"
-          content="https://braydentw.io/static/misc/og.png"
+          content="https://omovranger.io/static/misc/og.png"
         ></meta>
-        <script
+        {/* <script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-        />
+        /> */}
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

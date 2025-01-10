@@ -6,7 +6,7 @@ const projects: Project[] = [
     id: 0,
     title: "Farmsgate Web Application",
     desc: "A dynamic marketplace designed for farms to sell their produce. Built with React for seamless interactivity and TailwindCSS for a responsive, modern design.",
-    img: "/static/projects/farmsgate.png",
+    img: "/static/projects/Farmsgate.png",
     link: "https://farmsgate-frontend-pb.vercel.app/",
     tags: ["React", "TailwindCSS", "CSS", "Firebase"],
   },

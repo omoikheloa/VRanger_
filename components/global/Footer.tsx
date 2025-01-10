@@ -121,22 +121,6 @@ function Footer() {
           </div>
         </p>
       </div>
-      {/* <div className="mt-8 text-center sm:text-right sm:-mt-12">
-        <a
-          className="w-auto inline-flex items-center sm:w-auto font-bold flex-shrink text-xs border border-fun-pink px-4 py-2 rounded-xl text-fun-pink cursor-pointer opacity-50"
-          href="https://github.com/braydentw/braydentw.io"
-          target="_blank"
-          rel="nooreferrer"
-        >
-          <Image
-            src="/static/icons/github.svg"
-            width={16}
-            height={16}
-            alt="Github Icon"
-          />
-          <span className="ml-2">View Source Code </span>
-        </a>
-      </div> */}
     </footer>
   );
 }
