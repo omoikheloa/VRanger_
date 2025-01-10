@@ -6,20 +6,24 @@ export const kebabCase = (str: string) =>
 
 export const kebabArray = (arr: any[]) => arr.map((item) => kebabCase(item));
 
-export const randomNumberText = (finalNum: string, setNumber) => {
+export const randomNumberText = (
+  finalNum: string,
+  setNumber: (value: string) => void // Explicitly type `setNumber`
+) => {
   let count = 0;
   let newNum = "";
+
   const interval = setInterval(() => {
     count++;
     for (let i = 0; i < finalNum.length; i++) {
-      newNum += Math.floor(Math.random() * 10);
+      newNum += Math.floor(Math.random() * 10); // Generate random numbers
     }
-    setNumber(newNum);
-    newNum = "";
-    if (count === 20) {
-      clearInterval(interval);
+    setNumber(newNum); // Update the number
+    newNum = ""; // Reset `newNum` for the next iteration
 
-      setNumber("404");
+    if (count === 20) {
+      clearInterval(interval); // Stop the interval after 20 counts
+      setNumber("404"); // Set the final value to "404"
     }
-  }, 80);
+  }, 80); // Interval delay in milliseconds
 };

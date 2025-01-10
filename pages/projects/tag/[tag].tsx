@@ -12,7 +12,7 @@ import More from "components/projects/More";
 import Link from "next/link";
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const allTags = [];
+  const allTags: string[] = []; // Explicitly typing as string[]
   projects.forEach((project) =>
     project.tags.forEach((tag) => {
       allTags.push(tag);
@@ -28,23 +28,31 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps = async ({params}: {params: {tag: string}}) => {
+export const getStaticProps: GetStaticProps = async (context) => {
+  const { params } = context;
+  if (!params || typeof params.tag !== 'string') {
+    return {
+      notFound: true, // Handle the case where params or tag is undefined or invalid
+    };
+  }
+
   const tag = params.tag;
   const filteredProjects = projects.filter((project) =>
     [...kebabArray(project.tags)].includes(tag)
   );
+
   return {
     props: JSON.parse(
       JSON.stringify({
         filteredProjects,
-        tag: tag,
+        tag,
       })
     ),
   };
 };
 
-function PostPage({ filteredProjects, tag }) {
-  const capsTag = allTags[allKebabTags.indexOf(tag)];
+function PostPage({ filteredProjects, tag }: { filteredProjects: any[]; tag: string }) {
+  const capsTag = allTags[allKebabTags.indexOf(tag)]; // Ensure allTags and allKebabTags are typed
   return (
     <Page
       currentPage="Projects"
@@ -61,7 +69,6 @@ function PostPage({ filteredProjects, tag }) {
           View All
         </div>
       </Link>
-      {/* <More /> */}
     </Page>
   );
 }

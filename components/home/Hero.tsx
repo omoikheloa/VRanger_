@@ -1,5 +1,5 @@
 import React from "react";
-import { Link as ScrollLink } from "react-scroll";
+import { Link as ScrollLink } from 'react-scroll';
 
 function Hero() {
   return (
@@ -61,7 +61,7 @@ function Hero() {
           activeClass="active"
           to="learnmore"
           spy={true}
-          offset={-30}
+          offset={-70}
           smooth={true}
           duration={500}
         >
